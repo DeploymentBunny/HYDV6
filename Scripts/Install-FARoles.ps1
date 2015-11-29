@@ -23,7 +23,7 @@ Param
 (
     [parameter(mandatory=$True,ValueFromPipelineByPropertyName=$true,Position=0)]
     [ValidateNotNullOrEmpty()]
-    [ValidateSet("FILE","RDGW","ADDS","DHCP","RRAS","RDGW","MGMT","DEPL","ADCA","WSUS","SCVM","SCOR","HYPERV")]
+    [ValidateSet("Default","FILE","RDGW","ADDS","DHCP","RRAS","RDGW","MGMT","DEPL","ADCA","WSUS","SCVM","SCOR","HYPERV")]
     $Role
 )
 
