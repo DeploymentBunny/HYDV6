@@ -1,8 +1,8 @@
 ﻿    <#
     .Synopsis
-        Main function for HYDv6
+        Main function for Deployment HYDv6
     .DESCRIPTION
-        Main function for HYDv6
+        Main function for Deployment HYDv6
     .EXAMPLE
         Import-Module MainFunction.ps1
     .Created
