@@ -8,7 +8,7 @@
 .Created
     205-11-29
 .VERSION
-    1.0
+    1.1
 .Author
     Name        Mikael Nystrom
     Twitter     @mikael_nystrom
@@ -23,7 +23,7 @@ Param
 (
     [parameter(mandatory=$True,ValueFromPipelineByPropertyName=$true,Position=0)]
     [ValidateNotNullOrEmpty()]
-    [ValidateSet("FILE","RDGW","ADDS","DHCP","RRAS","RDGW","MGMT","DEPL","ADCA","WSUS","SCVM","SCOR")]
+    [ValidateSet("FILE","RDGW","ADDS","DHCP","RRAS","RDGW","MGMT","DEPL","ADCA","WSUS","SCVM","SCOR","HYPERV")]
     $Role
 )
 
@@ -31,6 +31,17 @@ Write-Output "Role selected is: $Role"
 
 switch ($Role)
 {
+    HYPERV
+    {
+        Write-Output "Adding Windows Features for $Role"
+        $ServicesToInstall = @(
+        "FS-Data-Deduplication",
+        "Hyper-V",  
+        "Hyper-V-Tools",
+        "Hyper-V-PowerShell"
+        )
+        Install-WindowsFeature -Name $ServicesToInstall -IncludeManagementTools -IncludeAllSubFeature -ErrorAction Stop
+    }
     FILE
     {
         Write-Output "Adding Windows Features for $Role"
