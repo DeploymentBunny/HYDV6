@@ -8,7 +8,7 @@
 .Created
     205-11-29
 .VERSION
-    1.1
+    1.2
 .Author
     Name        Mikael Nystrom
     Twitter     @mikael_nystrom
